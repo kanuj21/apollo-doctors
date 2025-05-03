@@ -9,7 +9,9 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // frontend port
+  origin: '*', // frontend port
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 }));
 app.use(express.json()); // parsing application/json
